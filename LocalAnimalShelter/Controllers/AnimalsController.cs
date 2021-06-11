@@ -23,10 +23,16 @@ namespace LocalAnimalShelter.Controllers
 
     private bool AnimalExists(int id) => _db.Animals.Any(a => a.AnimalId == id);
 
+    /// <summary>
+    /// Get a list of all of the animals available for adoption in the shelter
+    /// </summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animal>>> Get()
     => await _db.Animals.ToListAsync();
 
+    /// <summary>
+    /// Get the detailed information about one animal
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
     {
@@ -35,6 +41,9 @@ namespace LocalAnimalShelter.Controllers
       return a;
     }
 
+    /// <summary>
+    /// Create the information for a new animal in the shelter
+    /// </summary>
     [HttpPost]
     public async Task<ActionResult<Animal>> Post(Animal a)
     {
@@ -43,6 +52,9 @@ namespace LocalAnimalShelter.Controllers
       return CreatedAtAction(nameof(GetAnimal), new { id = a.AnimalId }, a);
     }
 
+    /// <summary>
+    /// Edit the information of an animal
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<ActionResult> Put(int id, Animal a)
     {
@@ -62,6 +74,9 @@ namespace LocalAnimalShelter.Controllers
       return NoContent();
     }
 
+    /// <summary>
+    /// Delete the entry for an animal that has been adopted
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteAnimal(int id)
     {
