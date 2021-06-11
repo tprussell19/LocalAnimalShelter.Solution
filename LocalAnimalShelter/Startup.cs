@@ -48,8 +48,7 @@ namespace LocalAnimalShelter.Solution
 
       services.AddControllers();
 
-      services.AddEntityFrameworkMySql()
-          .AddDbContext<LocalAnimalShelterContext>(options => options
+      services.AddDbContext<LocalAnimalShelterContext>(options => options
           .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
       services.AddSwaggerGen(c =>
       {
