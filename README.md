@@ -1,6 +1,6 @@
-# _Project Name_
+# _Local Animal Shelter_
 
-#### _short description_
+#### _API for an animal shelter_
 
 #### By _Thomas Russell_
 
@@ -15,7 +15,7 @@
 
 ## Description
 
-_Longer description of how the app works and how the different technologies were implemented._
+_A RESTful API used to keep track of animals at a local animal shelter. Users can get a list of all entries in the database, get a specific entry by its id, as well as add, edit, and delete entries. The API also uses version control, has enabled CORS, and uses Swagger documentation._
 
 ## Setup and Use
 
@@ -29,12 +29,12 @@ _Longer description of how the app works and how the different technologies were
 
 ### Installation
 
-1. Clone the repository: `$ git clone https://github.com/tprussell19/ProjectName.Solution`
-2. Navigate to the `ProjectName.Solution/` directory on your computer
+1. Clone the repository: `$ git clone https://github.com/tprussell19/LocalAnimalShelter.Solution`
+2. Navigate to the `LocalAnimalShelter.Solution/` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. Create a database using SQL via Entity:
 
-- Navigate to `ProjectName.Solution/ProjectName` in your command line
+- Navigate to `LocalAnimalShelter.Solution/LocalAnimalShelter` in your command line
 - Create a file named `appsettings.json` and paste the following code:
   ```
   {
@@ -47,7 +47,7 @@ _Longer description of how the app works and how the different technologies were
     },
     "AllowedHosts": "*",
     "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=project_name;uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=thomas_russell;uid=root;pwd=[YOUR-PASSWORD-GOES-Here];"
     }
   }
   ```
@@ -55,12 +55,16 @@ _Longer description of how the app works and how the different technologies were
 - Once the migration has been added, run the command `dotnet ef database update` to setup your database. (If this command throws and error, you might have to run the command `dotnet tool install --global dotnet-ef` first.)
 
 5. To run the app:
-   - Navigate to `ProjectName.Solution/ProjectName` in your command line
+   - Navigate to `LocalAnimalShelter.Solution/LocalAnimalShelter` in your command line
    - Run the command `dotnet restore` to restore the dependencies that are listed in the .csproj
    - Run the commmand `dotnet build` to build the project and its dependencies into a set of binaries
    - Finally, run the command `dotnet run` to run the project!
    - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the app and launch
    - Once the application is running, you can use Postman or Thunder Client to access the API.
+
+## API Documentation
+
+This API is documented using Swagger. While the app is running, navigate in your browser to `http://localhost:5000/swagger` to see the documentation for all of the API's endpoints.
 
 ## Known Bugs
 
